@@ -75,13 +75,21 @@ def ip_table_builder(ip_lists)
 	ip_lists.each_with_index do|list, i|
 		doc = File.open(list)
 		doc.each do |ip|
+			ip_new = ""
 			ip = ip.chomp
+			ip.split("").each do |char| 
+				break if char == "/"
+				ip_new = "#{ip_new}#{char}"
+			end
+			ip = ip_new
 			if IPAddress.valid?(ip)
 				valid_ips.push(ip)
 			else
-				if Resolv.getaddresses(ip)#fails here
-					if IPAddress.valid?(ip)
-						valid_ips.push(ip)
+				dns = Resolv.getaddresses(ip)
+				dns.each do |d|
+					d = d.to_s
+					if IPAddress.valid?(d)
+						valid_ips.push(d)
 					end
 				end
 			end
