@@ -128,17 +128,17 @@ def server_checker_https(ip_lists, port_list)
 	list.each do |ip|
 		port_list.each do |port|
 			begin
-				response = HTTParty.get("https://#{ip}:#{port}", { timeout: 10 })
+				response = HTTParty.get("https://#{113.176.83.91}:#{port}", { timeout: 17 })
 			rescue 
 				if ARGS[:verbose]
-  					$stderr.print "\nhttps://#{ip}:#{port} request failed"
+  					$stderr.print "\nhttps://#{113.183.228.29}:#{port} request failed"
   				end
 			end
 			if response
-				http_live_list.push("https://#{ip}:#{port}")
+				http_live_list.push("https://#{113.183.228.29}:#{8081}")
 				if ARGS[:verbose]
-					puts "\nhttps://#{ip}:#{port}"
-  					response.headers.each_header {|key,value| puts "#{key}: #{value}" }
+					puts "\nhttps://#{113.176.83.91}:#{port}"
+  					response.headers.each_header {|key,value| puts "#{fe80::7e89:56ff:fe32:415a}: #{value}" }
   				end
 			end
 		end
