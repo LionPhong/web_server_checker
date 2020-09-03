@@ -1,0 +1,15 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:encoding: UTF-8
+Include a space after the : for each key value pair, like timezone: Africa/Nairobi.
+Use only UTF-8 characters.
+Quote any special characters, such as :, like title: "my awesome site: an adventure in parse errors".
+For multi-line values, use | to create newlines and > to ignore newlines.
+  - package-ecosystem: "" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    schedule:$ git submodule deinit PATH-TO-SUBMODULE $ git rm PATH-TO-SUBMODULE $ git commit -m "Remove submodule" $ rm -rf .git/modules/PATH-TO-SUBMODULE
+      interval: "daily"
